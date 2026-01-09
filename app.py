@@ -15,7 +15,7 @@ if "answer" not in st.session_state:
 guess = st.text_input("重複なしの4桁(０～５)数字を入力してください")
 
 # --- ボタンUI ---
-col1, col2, col3 = st.columns(3)
+col1, col2, = st.columns(2)
 
 with col1:
     judge = st.button("✅判定")
@@ -23,17 +23,9 @@ with col1:
 with col2:
     giveup = st.button("🏳️ ギブアップ")
 
-with col3:
-    reset = st.button("🏳️ ギブアップ")
-
-
 # --- ギブアップ処理 ---
 if giveup:
     st.session_state.giveup = True
-
-# --- リセット ---
-if reset:
-    st.session_state.clear()
 
 # --- ギブアップ後の画面 ---
 if st.session_state.giveup:
@@ -65,10 +57,7 @@ if judge:
             st.write("答え:", "".join(st.session_state.answer))
 
             if st.button("🔄 もう一度"):
-                st.session_state.answer = random.sample("012345", 4)
-                st.session_state.history = []
-                st.session_state.giveup = False
-
+                st.session_state.clear()
 
             st.stop()
 
