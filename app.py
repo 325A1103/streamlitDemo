@@ -4,7 +4,7 @@ import random
 st.title("はじめてのStreamlitアプリ")
 st.title("🎯 Hit & Blowゲーム")
 st.write("# ルール説明")
-st.write(" Hit & Blowは、並び順をを当てる推理ゲームです。「ヒット（数字も場所も正解）」と「ブロー（数字は正解だが場所が違う）」のヒントを頼りに正解を求めてください。")
+st.write(" Hit & Blowは、並び順を当てる推理ゲームです。「ヒット（数字も場所も正解）」と「ブロー（数字は正解だが場所が違う）」のヒントを頼りに正解を求めてください。")
 
 # --- 初期化 ---
 if "answer" not in st.session_state:
@@ -57,7 +57,7 @@ if judge:
             st.image("images/seikai.png", caption="クリア！", use_container_width=True)
             st.write("答え:", "".join(st.session_state.answer))
 
-            st.write("# より少ない手数を目指してまた挑戦してね！")
+            st.write("より少ない手数を目指してまた挑戦しよう！")
 
 # --- 履歴表示 ---
 st.write("----------------------------------")
